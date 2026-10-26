@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html { -webkit-tap-highlight-color: transparent; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Scrollbar tipis di desktop */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; border: 2px solid #f8fafc; }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: #fff !important; font-size: 11px; }
+  main { padding: 0 !important; margin: 0 !important; }
+  section, figure, tr { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}
+
+.leaflet-container { font: inherit; }

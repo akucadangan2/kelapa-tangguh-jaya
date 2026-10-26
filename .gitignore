@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+
+# rahasia & file besar
+*adminsdk*.json
+*service-account*.json
+*.apk
+fix.py
