@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Pembeli kopra, tempurung dan arang tempurung langsung dari petani",
   region: "Minahasa, Manado dan sekitarnya",
   address: "Mokupa Jaga 6, samping Maesa Mart",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Maesa+Mart+Mokupa",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Maesa+Mart+c",
   hours: "08.00–20.00 WITA",
 
   // Nomor WhatsApp format 62..., tanpa + dan spasi

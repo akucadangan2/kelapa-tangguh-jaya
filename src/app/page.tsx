@@ -1,3 +1,5 @@
+import Image from "next/image";
+import logo from "@/app/logo.png";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -88,7 +90,7 @@ export default async function Landing() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <a href="#" className="flex min-w-0 items-center gap-2.5">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-700 text-sm font-bold text-white">KT</span>
+            <Image src={logo} alt="Kelapa Tangguh Jaya" width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl bg-white object-contain ring-1 ring-slate-200" />
             <span className="truncate text-[15px] font-bold leading-tight text-slate-900 sm:text-base">{SITE.name}</span>
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
