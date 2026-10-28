@@ -1,5 +1,6 @@
 import { ActionForm } from "@/components/action-form";
 import { Field, Grid, Input, Select, Textarea } from "@/components/ui";
+import { RegionPicker } from "@/components/region-picker";
 import { saveSupplier } from "./actions";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -27,11 +28,12 @@ export function SupplierForm({ supplier, officers }: { supplier?: any; officers:
         </Section>
 
         <Section title="Lokasi">
+          <RegionPicker value={v} />
           <Grid>
-            <Field label="Alamat" className="sm:col-span-2"><Input name="address" defaultValue={v.address} /></Field>
+            <Field label="Alamat detail (jalan, dusun, jaga)" className="sm:col-span-2"><Input name="address" defaultValue={v.address} /></Field>
             <Field label="Akses kendaraan"><Input name="vehicle_access" defaultValue={v.vehicle_access} placeholder="Truk / pikap / motor" /></Field>
-            <Field label="Latitude"><Input name="lat" defaultValue={v.lat} placeholder="-5.4" inputMode="decimal" /></Field>
-            <Field label="Longitude"><Input name="lng" defaultValue={v.lng} placeholder="105.2" inputMode="decimal" /></Field>
+            <Field label="Latitude"><Input name="lat" defaultValue={v.lat} placeholder="1.4" inputMode="decimal" /></Field>
+            <Field label="Longitude"><Input name="lng" defaultValue={v.lng} placeholder="124.8" inputMode="decimal" /></Field>
             <Field label="Petunjuk jalan"><Input name="directions" defaultValue={v.directions} /></Field>
           </Grid>
         </Section>

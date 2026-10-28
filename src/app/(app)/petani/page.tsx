@@ -24,7 +24,7 @@ export default async function PetaniPage({ searchParams }: { searchParams: Promi
   const t = today();
 
   let q = supabase.from("suppliers").select("*, pic:pic_user_id(full_name)").eq("is_active", true).order("name");
-  if (f.q) q = q.or(`name.ilike.%${f.q}%,address.ilike.%${f.q}%,phone.ilike.%${f.q}%`);
+  if (f.q) q = q.or(`name.ilike.%${f.q}%,address.ilike.%${f.q}%,region_label.ilike.%${f.q}%,phone.ilike.%${f.q}%`);
   if (f.product) q = q.contains("product_codes", [f.product]);
   if (f.pic) q = q.eq("pic_user_id", f.pic);
   const [{ data }, { data: bal }] = await Promise.all([q, supabase.from("v_supplier_balances").select("*")]);
@@ -86,7 +86,7 @@ export default async function PetaniPage({ searchParams }: { searchParams: Promi
                 render: (r: any) => (
                   <Two
                     main={<span className="inline-flex items-center gap-1.5">{r.name}{r.lat && <MapPin size={13} className="text-emerald-500" />}</span>}
-                    sub={[r.phone, r.address].filter(Boolean).join(" · ") || undefined}
+                    sub={[r.phone, r.region_label, r.address].filter(Boolean).join(" · ") || undefined}
                   />
                 ),
               },

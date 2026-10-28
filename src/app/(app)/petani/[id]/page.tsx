@@ -111,7 +111,7 @@ export default async function SupplierDetail({ params, searchParams }: { params:
         <div className="space-y-5 lg:sticky lg:top-20 lg:self-start">
           <Card title="Profil">
             <Info items={[
-              ["HP", s.phone || "-"],
+              ["HP", s.phone || "-"], ["Wilayah", s.region_label || "-"],
               ["Barang", (s.product_codes ?? []).length ? <span key="b" className="inline-flex flex-wrap gap-1">{(s.product_codes ?? []).map((c: string) => <Badge key={c} tone="gray" label={P_LABEL[c] ?? c} />)}</span> : "-"],
               ["Perkiraan", s.est_weight_kg ? `${kg(s.est_weight_kg)} / ${s.est_sacks ?? "-"} karung` : "-"],
               ["Jadwal ambil", tgl(s.pickup_date)],
