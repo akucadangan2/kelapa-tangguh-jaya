@@ -2,6 +2,7 @@ import { requireRole } from "@/lib/auth";
 import { buildNav } from "@/lib/nav";
 import { createClient } from "@/lib/supabase/server";
 import { Sidebar } from "@/components/sidebar";
+import { Tour } from "@/components/tour";
 import { ROLE_LABEL } from "@/lib/format";
 import { SITE } from "@/lib/site";
 
@@ -57,6 +58,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         badges={badges}
         company={(company.data?.value as string) || SITE.name}
       />
+      <Tour userId={session.id} />
       <main className="lg:ml-64">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</div>
       </main>
